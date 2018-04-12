@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<style>
+
+#myVideo 
+{
+    position:fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index:0;
+}
+
+
+audio
+{
+        display:none;
+}
+
+.words
+{
+    display:none;
+    position:relative;
+    top:20px;
+    left:40px;
+    font-family: 'Lobster', cursive; 
+    color:fuchsia;
+    font-size:50px;
+    z-index:1;
+}
+    
+</style>
+</head>
+
+<body>
+
+<audio controls autoplay="true" loop>
+    <source src="song2.mp3" type="audio/wav">
+</audio>
+
+<video autoplay muted loop id="myVideo">
+  <source src="Cherry.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<span id="s1" class="words">Welcome </span>
+<span id="s2" class="words">To </span>
+<span id="s3" class="words"> the </span>
+<span id="s4" class="words"> Cherry </span>
+<span id="s5" class="words"> Blossom </span>
+<span id="s6" class="words"> Festival</span>
+
+     <h1></h1> 
+        
+<script>
+$(document).ready(function() 
+{
+        
+   $('#s1').delay(1000).fadeIn();
+    
+    $('#s2').delay(2000).fadeIn();
+    
+    $('#s3').delay(3000).fadeIn();
+   
+    $('#s4').delay(4000).fadeIn();
+   
+    $('#s5').delay(5000).fadeIn();
+    
+    $('#s6').delay(5000).fadeIn();
+    
+    
+    /*for(i=1;i<7;i++)
+    {
+       $('#s'+ i).fadeIn(2000*i); 
+    }*/
+   
+    /*$("span").each(function(index) 
+    {
+        $(this).fadeIn(1000*index);
+    });*/
+    
+});
+
+$(document).click(function() 
+{
+    $('video').remove();
+    $('body').css('background-image', 'url(cheery.jpg)');
+    $('body').css('background-size', 'cover');
+    $('h1').text("The Festival was founded 40 years ago in appreciation of 1,000 cherry trees gifted to Seattle by Prime Minister Takeo Miki on behalf of the Japanese government in commemoration of the nation's bicentennial. It is the first ethnic festival to be held at Seattle Center annually and the oldest in the Seattle Center Festál series.");
+    $('h1').css('color','pink');
+});
+</script>
+
+</body>
+</html>

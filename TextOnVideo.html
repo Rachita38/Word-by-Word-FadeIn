@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<style>
+
+#myVideo 
+{
+    position:fixed;
+    z-index:0;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+
+audio
+{
+        display:none;
+}
+
+h1
+{
+    position: absolute;
+    z-index:1; 
+    font-family: 'Lobster', cursive; 
+    color:fuchsia;
+}
+</style>
+</head>
+
+<body>
+
+<audio controls autoplay="true" loop>
+    <source src="song2.mp3" type="audio/wav">
+</audio>
+
+<video autoplay muted loop id="myVideo">
+  <source src="Cherry.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+    <h1> Welcome to the Cherry Blossom Festival </h1>
+        
+<script>
+
+$(document).click(function() 
+{
+    $('video').remove();
+    $('body').css('background-image', 'url(cheery.jpg)');
+    $('body').css('background-size', 'cover');
+    $('h1').text("The Festival was founded 40 years ago in appreciation of 1,000 cherry trees gifted to Seattle by Prime Minister Takeo Miki on behalf of the Japanese government in commemoration of the nation's bicentennial. It is the first ethnic festival to be held at Seattle Center annually and the oldest in the Seattle Center Festál series.");
+        
+});
+</script>
+
+</body>
+</html>
